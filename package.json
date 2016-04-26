@@ -1,0 +1,29 @@
+{
+  "name": "botkit-storage-elasticsearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests"
+  },
+  "bugs": {
+    "url": "https://github.com/FoundersAS/botkit-storage-elasticsearch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoundersAS/botkit-storage-elasticsearch.git"
+  },
+  "main": "index.js",
+  "homepage": "https://github.com/FoundersAS/botkit-storage-elasticsearch",
+  "author": "kasper@founders.as, joshua@founders.as",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.0-rc.3",
+    "elasticsearch": "^11.0.1",
+    "highland": "^2.7.4",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "unit.js": "^2.0.0"
+  }
+}
