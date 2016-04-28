@@ -31,7 +31,7 @@ const testStorageMethod = function (storageMethod, index, cb) {
         test.assert(data.foo === testObj0.foo);
       });
       storageMethod.get('shouldnt-be-here', function (err, data) {
-        test.assert(err.displayName === 'NotFound');
+        test.assert(!err);
         test.assert(!data);
       });
       storageMethod.saveMany(manyObjs, function (err, data) {

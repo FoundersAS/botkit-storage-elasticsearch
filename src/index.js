@@ -59,7 +59,8 @@ module.exports = function (options, meta, onInit) {
       client.get({
         index: index,
         type: type,
-        id: id
+        id: id,
+        ignore: 404
       }, function (error, result) {
         cb(error, result._source || null);
       });
@@ -73,6 +74,7 @@ module.exports = function (options, meta, onInit) {
         type: type,
         doc_as_upsert: true,
         id: data.id,
+        retry_on_conflict: 10,
         body: { doc: data }
       }, cb);
     };
