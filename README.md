@@ -2,9 +2,13 @@
 
 A Elasticsearch storage module for Botkit
 
+## Installation
+
+    npm install botkit-elasticsearch-storage
+
 ## Usage
 
-    const esStorage = require('./lib/elasticsearch-storage')({
+    const esStorage = require('botkit-elasticsearch-storage')({
       host: process.env.ES_HOST,
       log: 'info'
     }, {
