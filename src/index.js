@@ -5,6 +5,8 @@ const highland = require('highland');
 const through = require('through2');
 const async = require('async');
 
+const noop = function () {};
+
 module.exports = function (options, meta, onInit) {
   if (meta === undefined) {
     meta = {};
@@ -33,6 +35,7 @@ module.exports = function (options, meta, onInit) {
     });
 
     function createIndex (index, cb) {
+      cb = cb || noop;
       index = `${index}${_VERSION_POSTFIX}`;
       client.indices.exists({ index }, function (err, res) {
         if (err) return cb(err);
@@ -82,6 +85,8 @@ module.exports = function (options, meta, onInit) {
 
   const saveMany = function (index, type) {
     return function (data, callback) {
+      callback = callback || noop;
+
       const dataStream = highland(data)
         .on('end', () => callback(null, index))
         .on('error', (err) => callback(err));
